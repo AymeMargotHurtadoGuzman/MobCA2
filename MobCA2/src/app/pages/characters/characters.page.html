@@ -8,10 +8,10 @@
  </ion-toolbar>
 </ion-header>
 <ion-content class="font_red" padding class="background">
-<ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searchChanges($event)"></ion-searchbar>
+<ion-searchbar class="font_red" [(ngModel)]="searchTerm" (ionChange)="searchChanges($event)"></ion-searchbar>
 <ion-item>
-    <ion-label class="font_red">Select Search type</ion-label>
-    <ion-select [(ngModel)]="type" (ionChange)="searchChanges($event)">
+    <ion-label class="font_red">Select  type</ion-label>
+    <ion-select class="font_red" [(ngModel)]="type" (ionChange)="searchChanges($event)">
       <ion-select-option value="">All</ion-select-option>
       <ion-select-option value="char_id">ID</ion-select-option>
       <ion-select-option value="category">Category</ion-select-option> 
@@ -21,7 +21,7 @@
   </ion-item>
 <ion-list>    
     <ion-item button detail lines="inset" *ngFor="let character of characters | async" (click)="openDetails(character)">
-     <ion-text color="medium">
+     <ion-text class="font_blue">
       <ion-icon name="checkmark-outline"></ion-icon>  {{character?.name}}
     </ion-text>
     </ion-item>    

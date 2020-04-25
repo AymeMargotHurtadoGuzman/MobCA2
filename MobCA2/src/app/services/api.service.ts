@@ -136,7 +136,7 @@ export class ApiService {
  }
  
  getDeaths(){     
-    return this.http.get(`hhttps://8100-a2a0c51a-a776-4105-8084-07674547bcdd.ws-eu01.gitpod.io/assets/deaths.json`);
+    return this.http.get(`https://8100-a2a0c51a-a776-4105-8084-07674547bcdd.ws-eu01.gitpod.io/assets/deaths.json`);
   }
  
   getDeathsByName(name){

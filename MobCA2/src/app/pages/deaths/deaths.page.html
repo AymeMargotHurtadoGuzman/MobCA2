@@ -8,10 +8,10 @@
  </ion-toolbar>
 </ion-header>
 <ion-content padding class="background">
-    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searchChanges($event)"></ion-searchbar>
+    <ion-searchbar class="font_red" [(ngModel)]="searchTerm" (ionChange)="searchChanges($event)"></ion-searchbar>
         <ion-item>
-            <ion-label>Select type</ion-label>
-            <ion-select [(ngModel)]="type" (ionChange)="searchChanges($event)">
+            <ion-label class="font_red">Select type</ion-label>
+            <ion-select class="font_red" [(ngModel)]="type" (ionChange)="searchChanges($event)">
                 <ion-select-option value="">All</ion-select-option>
                 <ion-select-option value="name">Name</ion-select-option>
                 <ion-select-option value="deathCount">Death Count</ion-select-option> 
@@ -20,7 +20,7 @@
         </ion-item>
      <ion-list>    
         <ion-item  *ngFor="let death of deaths | async" >
-            <ion-text color="medium">
+            <ion-text class="font_blue">
                 <ion-icon name="checkmark-outline"></ion-icon>  {{death?.death_id}} {{death?.death}} {{death?.deathCount}}
             </ion-text>
         </ion-item>    

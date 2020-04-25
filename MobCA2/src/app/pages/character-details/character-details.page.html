@@ -1,23 +1,21 @@
-<ion-card class="ion-card">
-  <ion-item>
-    <ion-avatar slot="start">
-      <img src="./assets/icon/character.ico" alt="ion">
-    </ion-avatar>
-    <ion-label>
-      <h3>{{character?.name}}</h3>
-      <p>{{character?.occupation}}</p>
-    </ion-label>
-  </ion-item>
-  <img  width="150" height="200" src="{{character?.img}}" alt="ion">
-  <ion-card-header>
-        <ion-card-title>{{character?.name}}</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-     <p>Nickname: {{character?.nickname}}</p>
+<ion-header>
+<ion-toolbar color="primary">
+  <ion-buttons slot="start" style="background-image:url('./assets/icon/episode.ico'); background-size:cover" defaultHref="/tabs/characters">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+  <ion-title>{{ character?.name }}</ion-title> 
+</ion-toolbar>
+</ion-header>
+
+<ion-card class="background">  
+  <ion-card-content class="small-font">
+     <h3>Nickname: {{character?.nickname}}</h3>
+      <img  width="150" height="200" src="{{character?.img}}" alt="ion">
+     <p >Occupation: {{character?.occupation}}</p>
      <p>Status: {{character?.status}}</p>
      <p>Birthday: {{character?.birthday}}</p>
      <p>Status: {{character?.status}}</p>
      <p>Portrayed: {{character?.portrayed}}</p> 
      <h3>Category: {{character?.category}}</h3>     
   </ion-card-content>
-<
+  </ion-card>
