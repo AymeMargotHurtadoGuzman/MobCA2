@@ -21,6 +21,9 @@ export class DeathsPage implements OnInit {
   searchTerm='';
   type : SearchType = SearchType.all;
 
+  var_limit=0;
+  var_offset=10;
+
   constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit() {
@@ -37,5 +40,23 @@ export class DeathsPage implements OnInit {
      })
 
   } 
+
+  loadPage(event){
+      this.deaths = this.api.getDeathPages(this.var_limit,this.var_offset);
+      this.deaths.subscribe(data=>{
+         console.log('My data: ',data)
+     })
+     
+     if(event){
+         event.target.complete();
+     }
+
+  }
+
+  loadData(event){
+    console.log(event);
+    this.var_limit = this.var_limit + this.var_offset;
+    this.loadPage(event);
+  }
 
 }

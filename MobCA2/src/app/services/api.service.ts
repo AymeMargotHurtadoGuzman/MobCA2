@@ -151,6 +151,10 @@ export class ApiService {
     return this.http.get(`https://breakingbadapi.com/api/death-count`);
   }
 
+  getDeathPages(limit,offset){
+      return this.http.get(`https://www.breakingbadapi.com/api/deaths?limit=${limit}&offset=${offset}`);
+  }
+
   searchDataDeath(find: string, type: string): Observable<any>{
    
     switch(type) { 
