@@ -1,0 +1,26 @@
+<ion-header>
+<ion-toolbar color="primary">
+  <ion-buttons slot="start" style="background-image:url('./assets/icon/episode.ico'); background-size:cover" defaultHref="/tabs/episodes">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+  <ion-title>{{ episode?.title }}</ion-title> 
+</ion-toolbar>
+</ion-header>
+
+<ion-card class="background">
+  <ion-item>      
+    <ion-label>
+      <h3>{{episode?.title}}</h3>
+      <p>{{episode?.air_date}}</p>
+    </ion-label>
+  </ion-item>
+  <img  width="100" height="120" src="./assets/episode.jpg" alt="ion">
+  <ion-card-header>
+        <ion-card-title>{{episode?.title}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>      
+     <p>Air Date: {{episode?.air_date}}</p>
+     <p>Episodes: {{episode?.episodes}}</p>
+     <p>Serie: {{episode?.series}}</p> 
+     <p>Characters:</p> <ion-label class="small-font"> {{episode?.characters}}</ion-label>             
+  </ion-card-content>

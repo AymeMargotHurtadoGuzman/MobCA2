@@ -1,0 +1,23 @@
+<ion-card class="ion-card">
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src="./assets/icon/character.ico" alt="ion">
+    </ion-avatar>
+    <ion-label>
+      <h3>{{character?.name}}</h3>
+      <p>{{character?.occupation}}</p>
+    </ion-label>
+  </ion-item>
+  <img  width="150" height="200" src="{{character?.img}}" alt="ion">
+  <ion-card-header>
+        <ion-card-title>{{character?.name}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+     <p>Nickname: {{character?.nickname}}</p>
+     <p>Status: {{character?.status}}</p>
+     <p>Birthday: {{character?.birthday}}</p>
+     <p>Status: {{character?.status}}</p>
+     <p>Portrayed: {{character?.portrayed}}</p> 
+     <h3>Category: {{character?.category}}</h3>     
+  </ion-card-content>
+<

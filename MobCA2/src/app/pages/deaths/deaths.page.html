@@ -1,0 +1,28 @@
+<ion-header>
+   <ion-toolbar> 
+    <table>
+        <tr>
+            <td><ion-img src="./assets/icon/deathsblue.png"></ion-img></td>            
+        </tr>
+   </table>   
+ </ion-toolbar>
+</ion-header>
+<ion-content padding class="background">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searchChanges($event)"></ion-searchbar>
+        <ion-item>
+            <ion-label>Select type</ion-label>
+            <ion-select [(ngModel)]="type" (ionChange)="searchChanges($event)">
+                <ion-select-option value="">All</ion-select-option>
+                <ion-select-option value="name">Name</ion-select-option>
+                <ion-select-option value="deathCount">Death Count</ion-select-option> 
+                <ion-select-option value="random">Random</ion-select-option>     
+            </ion-select>
+        </ion-item>
+     <ion-list>    
+        <ion-item  *ngFor="let death of deaths | async" >
+            <ion-text color="medium">
+                <ion-icon name="checkmark-outline"></ion-icon>  {{death?.death_id}} {{death?.death}} {{death?.deathCount}}
+            </ion-text>
+        </ion-item>    
+  </ion-list>
+</ion-content>

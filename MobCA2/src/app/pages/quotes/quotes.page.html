@@ -1,0 +1,29 @@
+<ion-header>
+   <ion-toolbar> 
+    <table>
+        <tr>
+            <td><ion-img src="./assets/icon/quotesblue.png"></ion-img></td>            
+        </tr>
+   </table>   
+ </ion-toolbar>
+</ion-header>
+<ion-content padding class="background">
+    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searchChanges($event)"></ion-searchbar>
+        <ion-item>
+            <ion-label>Select Search type</ion-label>
+            <ion-select [(ngModel)]="type" (ionChange)="searchChanges($event)">
+                <ion-select-option value="">All</ion-select-option>
+                <ion-select-option value="quote_id">ID</ion-select-option>
+                <ion-select-option value="author">Author</ion-select-option>
+                <ion-select-option value="random">Random</ion-select-option>
+                <ion-select-option value="random_author">Random Author</ion-select-option>     
+            </ion-select>
+        </ion-item>
+    <ion-list>    
+        <ion-item button detail lines="inset" *ngFor="let quote of quotes | async" (click)="openDetails(quote)">
+            <ion-text color="medium">
+                <ion-icon name="checkmark-outline"></ion-icon>  {{quote?.quote_id}} Quote
+            </ion-text>
+        </ion-item>    
+  </ion-list>
+</ion-content>
