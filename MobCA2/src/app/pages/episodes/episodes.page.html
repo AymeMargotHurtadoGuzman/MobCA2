@@ -19,9 +19,13 @@
         </ion-item>
     <ion-list>    
         <ion-item button detail lines="inset" *ngFor="let episode of episodes | async" (click)="openDetails(episode)">
-             <ion-label class="font_blue">
-                <ion-icon name="checkmark-outline"></ion-icon>  {{episode?.title}}
+             <ion-avatar slot="start">
+                <img src="./assets/icon/episode.png" alt="ion">
+            </ion-avatar>
+            <ion-label>
+                <h3>{{episode?.title}}</h3>
+                <p>{{episode?.air_date}}</p>
             </ion-label> 
-          </ion-item>    
+        </ion-item>    
   </ion-list>
 </ion-content>

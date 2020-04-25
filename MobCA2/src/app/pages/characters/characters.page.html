@@ -20,9 +20,13 @@
   </ion-item>
 <ion-list>    
     <ion-item button detail lines="inset" *ngFor="let character of characters | async" (click)="openDetails(character)">
-     <ion-text class="font_blue">
-      <ion-icon name="checkmark-outline"></ion-icon>  {{character?.name}}
-    </ion-text>
+        <ion-avatar slot="start">
+            <img src="{{character?.img}}" alt="ion">
+        </ion-avatar>
+        <ion-label>
+            <h3>{{character?.name}}</h3>
+            <p>{{character?.nickname}}</p>
+        </ion-label>
     </ion-item>    
   </ion-list>
 </ion-content>

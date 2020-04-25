@@ -19,9 +19,20 @@
         </ion-item>
      <ion-list>    
         <ion-item  *ngFor="let death of deaths | async" >
-            <ion-text class="font_blue">
-                <ion-icon name="checkmark-outline"></ion-icon>  {{death?.death_id}} {{death?.death}} {{death?.deathCount}}
-            </ion-text>
+             <ion-avatar slot="start">
+                <img src="./assets/icon/character.ico" alt="ion">
+            </ion-avatar>
+            <ion-label>
+                <h3>{{death?.death_id}} {{death?.death}} {{death?.deathCount}}</h3>
+                <p>{{death?.deathCount}}</p>
+            </ion-label> 
         </ion-item>    
   </ion-list>
+
+  <infinite-scroll threshold="25%" (ionInfinite="loadData($event)">
+    <infinite-scroll-content loadingSpinner="cresent" loadingText="Loading more data.."></infinite-scroll-content>
+  </infinite-scroll>
+
 </ion-content>
+
+

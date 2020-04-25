@@ -20,9 +20,13 @@
         </ion-item>
     <ion-list>    
         <ion-item button detail lines="inset" *ngFor="let quote of quotes | async" (click)="openDetails(quote)">
-            <ion-text class="font_blue">
-                <ion-icon name="checkmark-outline"></ion-icon>  {{quote?.quote_id}} Quote
-            </ion-text>
+            <ion-avatar slot="start">
+                <img src="./assets/icon/episode.ico" alt="ion">
+            </ion-avatar>
+            <ion-label>
+                <h3>{{quote?.quote_id}} Quote</h3>
+                <p>{{quote?.series}}</p>
+            </ion-label>             
         </ion-item>    
   </ion-list>
 </ion-content>
